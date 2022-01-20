@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+/*variables*/
+:root {
+    --background-color: #efe9f4;
+    --font-color: #ffffff;
+
+    --card-front-color: #5fbff9;
+    --card-back-color: #f95fb4;
+
+    --card-animation-speed: 1s;
+}
+
+/*reset*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*basic styles*/
+html {
+    font-size: 20px;
+    color: var(--font-color);
+    font-family: 'Quicksand', sans-serif;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+    width: 100vw;
+
+    background-color: var(--background-color);
+}
+
+/*default card state*/
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 10rem;
+    height: 16rem;
+    padding: 1rem;
+
+    perspective: 80rem;
+    user-select: none;
+
+    transition: var(--card-animation-speed) ease;
+    transform: scale(1);
+}
+
+.card .card__side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+
+    cursor: pointer;
+    backface-visibility: hidden;
+    transition: var(--card-animation-speed) ease;
+}
+.card .card__front {
+    transform: rotateY(0deg);
+    background-color: var(--card-front-color);
+}
+.card .card__back {
+    transform: rotateY(180deg);
+    background-color: var(--card-back-color);
+}
+
+/*flip card state*/
+.card--flipped .card__front {
+    transform: rotateY(-180deg) !important;
+}
+.card--flipped .card__back {
+    transform: rotateY(0deg) !important;
+}
+
+/*grow card state*/
+.card--grown {
+    transform: scale(1.05);
+}
