@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+/*variables*/
+:root {
+    --font-color: #773ee2;
+    --background-color: #fcfcfc;
+
+    --scrollbar-width: 1rem;
+    --scrollbar-radius: 0.5rem;
+
+    --scrollbar-track-margin: 0.5rem;
+    --scrollbar-thumb-border-size: 0.2rem;
+
+    --scrollbar-track-color: #d5d3f8;
+    --scrollbar-thumb-color: #773ee2;
+    --scrollbar-handle-color: #6738be;
+}
+
+/*reset*/
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*basic styles*/
+html {
+    font-size: 24px;
+    color: var(--font-color);
+    font-family: 'Quicksand', sans-serif;
+}
+body {
+    background-color: var(--background-color);
+}
+
+/*section styles*/
+.content-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+    width: 100%;
+}
+
+/*scrollbar*/
+::-webkit-scrollbar {
+    width: var(--scrollbar-width);
+}
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-track-color);
+    border-radius: var(--scrollbar-radius);
+    margin: var(--scrollbar-track-margin);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb-color);
+    border-radius: var(--scrollbar-radius);
+    border: var(--scrollbar-thumb-border-size) solid var(--scrollbar-track-color);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-handle-color);
+}
