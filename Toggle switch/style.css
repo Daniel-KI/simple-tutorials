@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+/* variables */
+:root {
+    --font-color: #1e1e1e;
+    --background-color: #fcfcfc;
+    --indent: 2rem;
+
+    --switch-width: 4rem;
+    --switch-height: 2rem;
+    --switch-radius: calc(var(--switch-height) / 2);
+    --switch-mark-size: calc(var(--switch-height) / 1.25);
+    --switch-gap-size: calc((var(--switch-height) - var(--switch-mark-size)) / 2);
+    --translate-distance: calc(var(--switch-width) - var(--switch-mark-size) - var(--switch-gap-size) * 2);
+
+    --transition-time: 0.5s;
+
+    --disable-color: #f58396;
+    --enable-color: #6be499;
+}
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* basic styles */
+html {
+    font-size: 20px;
+    color: var(--font-color);
+    font-family: 'Quicksand', sans-serif;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--indent);
+
+    height: 100vh;
+    width: 100vw;
+
+    background-color: var(--background-color);
+}
+
+/* switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: var(--switch-width);
+    height: var(--switch-height);
+}
+.switch__input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.switch__mark {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-color: var(--disable-color);
+    border-radius: var(--switch-radius);
+
+    -webkit-transition: var(--transition-time);
+    transition: var(--transition-time);
+}
+.switch__mark::before {
+    position: absolute;
+    content: "";
+    height: var(--switch-mark-size);
+    width: var(--switch-mark-size);
+    left: var(--switch-gap-size);
+    bottom: var(--switch-gap-size);
+
+    border-radius: 50%;
+    background-color: white;
+
+    -webkit-transition: var(--transition-time);
+    transition: var(--transition-time);
+}
+.switch__input:checked + .switch__mark {
+    background-color: var(--enable-color);
+}
+.switch__input:checked + .switch__mark::before {
+    -webkit-transform: translateX(var(--translate-distance));
+    -ms-transform: translateX(var(--translate-distance));
+    transform: translateX(var(--translate-distance));
+}
