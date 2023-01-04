@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+
+/* variables */
+:root {
+  --background-color: #fcfcfc;
+  --font-color: #7393dd;
+
+  --carousel-width: 60vw;
+  --carousel-height: 30vh;
+  --carousel-radius: 0.5rem;
+
+  --gap-large: 2rem;
+  --gap-small: 0.5rem;
+
+  --btn-width: 4rem;
+  --btn-font-size: 2rem;
+  --btn-hover-font-size: 2.5rem;
+  --btn-color: #fcfcfc;
+
+  --dots-height: 4rem;
+  --dot-size: 0.5rem;
+
+  --transition-time: 0.1s;
+}
+
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* basic styles */
+html {
+  font-size: 20px;
+  color: var(--font-color);
+  font-family: "Quicksand", sans-serif;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap-large);
+
+  height: 100vh;
+  width: 100vw;
+
+  overflow: hidden;
+
+  background: var(--background-color);
+}
+
+/* carousel */
+.carousel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: relative;
+}
+
+/* slides */
+.slides__wrapper {
+  width: var(--carousel-width);
+  height: var(--carousel-height);
+  border-radius: var(--carousel-radius);
+
+  overflow: hidden;
+
+  display: flex;
+}
+.slide {
+  min-width: var(--carousel-width);
+}
+.slide__img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* controls */
+.controls {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.controls__btn {
+  width: var(--btn-width);
+  height: 100%;
+  border: none;
+  background: none;
+  font-size: var(--btn-font-size);
+  color: var(--btn-color);
+  cursor: pointer;
+  transition: var(--transition-time);
+}
+.controls__btn:hover {
+  font-size: var(--btn-hover-font-size);
+  filter: brightness(85%);
+}
+
+/* dots */
+.dots {
+  position: absolute;
+  bottom: 0;
+  width: calc(100% - var(--btn-width));
+  height: var(--dots-height);
+
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  gap: var(--gap-small);
+  padding-bottom: var(--gap-small);
+}
+.dot {
+  width: var(--dot-size);
+  height: var(--dot-size);
+  background: var(--btn-color);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: var(--transition-time);
+}
+.dot:hover {
+  filter: brightness(85%);
+}

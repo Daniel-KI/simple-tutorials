@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Carousel</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Carousel</h1>
+
+      <div class="carousel">
+        <div class="slides__wrapper">
+          <div class="slide slide_selected">
+            <img src="./assets/slide1.jpg" alt="slide #1" class="slide__img" />
+          </div>
+          <div class="slide">
+            <img src="./assets/slide2.jpg" alt="slide #2" class="slide__img" />
+          </div>
+          <div class="slide">
+            <img src="./assets/slide3.jpg" alt="slide #3" class="slide__img" />
+          </div>
+        </div>
+
+        <div class="controls">
+          <button class="controls__btn controls__btn_prev">&#8249;</button>
+          <button class="controls__btn controls__btn_next">&#8250;</button>
+        </div>
+
+        <div class="dots">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
